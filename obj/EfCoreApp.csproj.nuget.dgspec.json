@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/barancinar/Desktop/aspnet/EfCoreApp/EfCoreApp.csproj": {}
+    "C:\\Users\\cinar\\Desktop\\aspnet\\EfCoreApp\\EfCoreApp.csproj": {}
   },
   "projects": {
-    "/Users/barancinar/Desktop/aspnet/EfCoreApp/EfCoreApp.csproj": {
+    "C:\\Users\\cinar\\Desktop\\aspnet\\EfCoreApp\\EfCoreApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/barancinar/Desktop/aspnet/EfCoreApp/EfCoreApp.csproj",
+        "projectUniqueName": "C:\\Users\\cinar\\Desktop\\aspnet\\EfCoreApp\\EfCoreApp.csproj",
         "projectName": "EfCoreApp",
-        "projectPath": "/Users/barancinar/Desktop/aspnet/EfCoreApp/EfCoreApp.csproj",
-        "packagesPath": "/Users/barancinar/.nuget/packages/",
-        "outputPath": "/Users/barancinar/Desktop/aspnet/EfCoreApp/obj/",
+        "projectPath": "C:\\Users\\cinar\\Desktop\\aspnet\\EfCoreApp\\EfCoreApp.csproj",
+        "packagesPath": "C:\\Users\\cinar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cinar\\Desktop\\aspnet\\EfCoreApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/barancinar/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\cinar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

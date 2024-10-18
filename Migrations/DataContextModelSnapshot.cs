@@ -26,7 +26,12 @@ namespace EfCoreApp.Migrations
                     b.Property<string>("Baslik")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("OgretmenId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("KursId");
+
+                    b.HasIndex("OgretmenId");
 
                     b.ToTable("Kurslar");
                 });
@@ -47,6 +52,10 @@ namespace EfCoreApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("KayitId");
+
+                    b.HasIndex("KursId");
+
+                    b.HasIndex("OgrenciId");
 
                     b.ToTable("KursKayitlari");
                 });
@@ -72,6 +81,77 @@ namespace EfCoreApp.Migrations
                     b.HasKey("OgrenciId");
 
                     b.ToTable("Ogrenciler");
+                });
+
+            modelBuilder.Entity("EfCoreApp.Data.Ogretmen", b =>
+                {
+                    b.Property<int>("OgretmenId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Ad")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Eposta")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Soyad")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Telefon")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("OgretmenId");
+
+                    b.ToTable("Ogretmenler");
+                });
+
+            modelBuilder.Entity("EfCoreApp.Data.Kurs", b =>
+                {
+                    b.HasOne("EfCoreApp.Data.Ogretmen", "Ogretmen")
+                        .WithMany("Kurslar")
+                        .HasForeignKey("OgretmenId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ogretmen");
+                });
+
+            modelBuilder.Entity("EfCoreApp.Data.KursKayit", b =>
+                {
+                    b.HasOne("EfCoreApp.Data.Kurs", "Kurs")
+                        .WithMany("KursKayitlari")
+                        .HasForeignKey("KursId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EfCoreApp.Data.Ogrenci", "Ogrenci")
+                        .WithMany("KursKayitlari")
+                        .HasForeignKey("OgrenciId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Kurs");
+
+                    b.Navigation("Ogrenci");
+                });
+
+            modelBuilder.Entity("EfCoreApp.Data.Kurs", b =>
+                {
+                    b.Navigation("KursKayitlari");
+                });
+
+            modelBuilder.Entity("EfCoreApp.Data.Ogrenci", b =>
+                {
+                    b.Navigation("KursKayitlari");
+                });
+
+            modelBuilder.Entity("EfCoreApp.Data.Ogretmen", b =>
+                {
+                    b.Navigation("Kurslar");
                 });
 #pragma warning restore 612, 618
         }
